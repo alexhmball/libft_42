@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aball <aball@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 16:33:49 by aball             #+#    #+#             */
-/*   Updated: 2022/01/27 16:48:04 by aball            ###   ########.fr       */
+/*   Created: 2021/11/01 03:30:19 by aball             #+#    #+#             */
+/*   Updated: 2022/03/02 17:42:17 by aball            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_atoi(const char *str)
+int	print_putchar(char c)
 {
-	int	s;
-	int	r;
-
-	r = 0;
-	s = 1;
-	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
-		str++;
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			s *= -1;
-		str++;
-		break ;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		r *= 10;
-		r += *str - '0';
-		str++;
-	}
-	return (r * s);
+	write(1, &c, 1);
+	return (1);
 }

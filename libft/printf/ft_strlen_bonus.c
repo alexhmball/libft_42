@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strlen_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aball <aball@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 16:34:06 by aball             #+#    #+#             */
-/*   Updated: 2022/01/27 16:34:08 by aball            ###   ########.fr       */
+/*   Created: 2021/11/01 03:35:01 by aball             #+#    #+#             */
+/*   Updated: 2022/03/02 17:48:22 by aball            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_bonus.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	print_strlen(char *str)
 {
-	void	*ptr;
+	int	i;
 
-	ptr = (void *)malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

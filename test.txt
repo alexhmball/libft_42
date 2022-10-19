@@ -1,3 +1,0 @@
-b
-hello
-42Hi

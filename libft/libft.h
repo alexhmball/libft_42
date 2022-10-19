@@ -6,13 +6,14 @@
 /*   By: aball <aball@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 20:19:34 by aball             #+#    #+#             */
-/*   Updated: 2022/01/27 17:00:39 by aball            ###   ########.fr       */
+/*   Updated: 2022/08/28 23:17:26 by aball            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "printf/ft_printf.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
@@ -22,6 +23,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+// typedef struct s_dlist
+// {
+// 	void			*content;
+// 	struct s_dlist	*next;
+// 	struct s_dlist	*prev;
+// }				t_dlist;
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MANDATORY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -71,4 +79,20 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MY FUNCTIONS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+char	*str_sep(int size, char **strs, char *sep);
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~DOUBLY LINKED LISTS~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+// void	ft_lstdelone_db(t_dlist **head, t_dlist *node, void (*del)(void *));
+// void	ft_lstiter_db(t_dlist *lst, void (*f)(void *));
+// void	ft_lstclear_db(t_dlist **lst, void (*del)(void *));
+// int	ft_lstsize_db(t_dlist *lst);
+// t_dlist	*ft_lstnew_db(void *content);
+// void	ft_lstadd_back_db(t_dlist **lst, t_dlist *new);
+// t_dlist	*ft_lstlast_db(t_dlist *lst);
+// void	ft_lstadd_front_db(t_dlist **lst, t_dlist *new);
+
 #endif
